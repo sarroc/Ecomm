@@ -15,18 +15,27 @@ res.send(`
     `);
 });
 
-app.post('/', (req, res) => {
-    //  get access to email, password, passwordConfirmation
-    req.on('data', data => {
-        const parsed = data.toString('utf8').split('&');
-        const formData = {};
-        for (let pair of parsed) {
+const bodyParser = (req, res, next) => {
+//  get access to email, password, passwordConfirmation
+    if (req.method === 'POST') {
+      req.on('data', data => {
+         const parsed = data.toString('utf8').split('&');
+         const formData = {};
+         for (let pair of parsed) {
             const [key, value] = pair.split('=');
             formData[key] = value;
         }
-        console.log(formData);
-    });
-    res.send('Account created!!');
+        req.body = formData;
+        next();
+      });
+    } else {
+      next();
+    }
+};
+
+app.post('/', bodyParser, (req, res) => {
+    console.log(req.body);
+       res.send('Account created!!');
 });
 
 app.listen(3000, () => {
