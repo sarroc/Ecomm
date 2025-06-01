@@ -8,27 +8,30 @@ class UsersRepository {
 
         this.filename = filename;
         try {
-            fs.acessSync(this.filename);
+            fs.accessSync(this.filename);
          } catch (err) {
             fs.writeFileSync(this.filename, '[]');
         }
     }
-    async getAll( {
+    async getAll() {
         //  open the file called this.filename
         const contents = await fs.promises.readFile(this.filename, { encoding: 'utf8'
         });
-        // read its contents
-        console.log(contents);
+
         // parse the contents
+        const data = JSON.parse(contents);
 
         // return the parsed data
+        return data;
     }
 }
 
-const test = () => {
+const test = async () => {
     const repo = new UsersRepository('users.json');
 
-    await repo.getAll();
+    const users = await repo.getAll();
+
+    console.log(users);
 };
 
 test();
