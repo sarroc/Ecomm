@@ -14,13 +14,26 @@ class UsersRepository {
         }
     }
     async getAll() {
-        return JSON.parse(await fs.promises.readFile(this.filename, { encoding: 'utf8'
-        }));
-    }
+      return JSON.parse(
+        await fs.promises.readFile(this.filename, { encoding: 'utf8'
+      })
+    );
+  }
+
+  async create(attrs) {
+    // {email: 'xxx', password: 'yyy'}
+    const records = await this.getAll();
+    records.push(attrs);
+    
+    //  write the updated 'records' array to this.filename
+    await fs.promises.writeFile(this.filename, JSON.stringify(records));
+  }
 }
 
 const test = async () => {
     const repo = new UsersRepository('users.json');
+
+    repo.create({ email: 'test@test.com', password: 'password'});
 
     const users = await repo.getAll();
 
