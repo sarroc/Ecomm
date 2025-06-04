@@ -45,6 +45,10 @@ app.post('/signup', async (req, res) => {
     res.send('Account created!!');
 });
 
+app.get('/signout', (req, res) => {
+req.session = null;
+});
+
 app.listen(3000, () => {
     console.log('Listening');
 });
