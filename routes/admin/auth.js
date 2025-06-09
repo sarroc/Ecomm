@@ -14,17 +14,12 @@ res.send(signupTemplate({ req }));
 
 router.post(
     '/signup', 
-    [
-    requireEmail,
-    requirePassword,
-    requirePasswordConfirmation
-    ],
+    [requireEmail, requirePassword, requirePasswordConfirmation],
  async (req, res) => {
     const errors = validationResult(req);
     console.log(errors);
 
     const { email, password, passwordConfirmation } = req.body;
-
     const user = await usersRepo.create({ email, password });
 
     req.session.userId = user.id;
