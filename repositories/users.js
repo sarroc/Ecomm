@@ -17,6 +17,7 @@ class UsersRepository {
             fs.writeFileSync(this.filename, '[]');
         }
     }
+
     async getAll() {
       return JSON.parse(
         await fs.promises.readFile(this.filename, { encoding: 'utf8'
@@ -35,7 +36,7 @@ class UsersRepository {
     const record = {
       ...attrs,
       password: `${buf.toString('hex')}.${salt}`
-    }
+    };
     records.push(record);
     
     await this.writeAll(records);
