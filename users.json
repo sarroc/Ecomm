@@ -1,36 +1,13 @@
 [
   {
-    "email": "test@test.com"
-  },
-  {
-    "email": "hallo@hallo.com",
-    "password": "xcz",
-    "id": "d24bf74f"
-  },
-  {
-    "email": "hey@hey.com",
-    "password": "ttt",
-    "id": "3e2d3f31"
-  },
-  {
     "email": "test2@test2.com",
     "password": "510a8779e10a83d8df76f66e52fa09901581979274ecc01baaf0b81a1bd0a7de48d5c45c5eafa6619bc6f1737b211944193cd0ddbbc642572db6bf0a439e0964.26dbbaabcb84f855",
     "id": "c4000ccb"
   },
   {
     "email": "hello1@hello1.com",
-    "password": "739ef860f8572590b9385b75bd34f0e3a3bf358a6494f52cf1facb5dc8e31e7ccf240a214866a0baf5b1daec99b73f0eecede1786ecd9bca266d1826ac14e53b.989c8f7520b29895",
-    "id": "bd99f57b"
-  },
-  {
-    "email": "hello1@hello1.com",
     "password": "b2d728831834be68c63687cad88fd9a777e408d0bfd9932028c2b30bf1810cc7d2d44168f24b621317194a353fc7c816ba129a542c5efa7213364084d52dba4c.ff831391df8a0587",
     "id": "fdcb7342"
-  },
-  {
-    "email": "hello1@hello1.com",
-    "password": "77ea79f4fc3c113970e55e7f44b8cc9c1092042e7fe1c622394f20861bbe7a970d5b2f2c91943d5280466ab7989d4bea74df1f1fb1230edfc7497690c4272980.ee0e3569ac0628ce",
-    "id": "28d362c5"
   },
   {
     "email": "hey@hey.com",
